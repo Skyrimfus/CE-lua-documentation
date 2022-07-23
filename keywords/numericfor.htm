@@ -1,0 +1,66 @@
+<html>
+<head><link href="../css/default.css" rel="stylesheet"></head>
+<a href="../index.htm" style="float:right">Index</a>
+<pre>
+<h1>for...do</h1>
+Loop based on expression
+<div class="codeUsage"><strong>for</strong> &ltvariable&gt = &ltstart&gt, &ltstop&gt [, &ltstepval&gt] <strong>do</strong>
+<em>statements</em>
+...
+<strong>end</strong></div>
+<h2>Parameters</h2>
+<table><tbody>
+<tr><td>variable</td><td>The variable used for the count</td></tr>
+<tr><td>start</td><td>The initial value of the variable</td></tr>
+<tr><td>stop</td><td>The final value of the variable</td></tr>
+<tr><td>stepval</td><td><strong>[optional]</strong> The value that the variable is increased by each loop(default is 1)</td></tr>
+</tbody></table>
+<h2>Remarks</h2>
+The variable will be created automatically with local scope relative to the loop.
+
+A For loop will execute zero times if:
+    start &gt stop and stepval &gt 0, or
+    start &lt stop and stepval is negative
+
+
+
+<h2>Related</h2>
+<a href="break.htm">break</a>, <a href="genericfor.htm">for...in...do</a>
+
+
+<h2>Example 1</h2>
+<div class="codeSnippet">
+<span class=lua-keyword>for </span><span class=lua-variable>i</span><span class=lua-operator>=</span><span class=lua-number>1</span><span class=lua-operator>, </span><span class=lua-number>10 </span><span class=lua-keyword>do
+  </span><span class=lua-builtinfunc>print</span><span class=lua-operator>(</span><span class=lua-variable>i</span><span class=lua-operator>) </span><span class=lua-comment>--prints the numbers 1-10
+</span><span class=lua-keyword>end
+</span><span class=lua-builtinfunc>print</span><span class=lua-operator>(</span><span class=lua-string>"loop finished"</span><span class=lua-operator>)
+</span><span class=lua-comment>--[[output:
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+loop finished
+]]</span>
+</div>
+<h2>Example 2</h2>
+<div class="codeSnippet">
+<span class=lua-keyword>for </span><span class=lua-variable>i</span><span class=lua-operator>=</span><span class=lua-number>10</span><span class=lua-operator>,</span><span class=lua-number>0</span><span class=lua-operator>,-</span><span class=lua-number>2 </span><span class=lua-keyword>do
+  </span><span class=lua-builtinfunc>print</span><span class=lua-operator>(</span><span class=lua-variable>i</span><span class=lua-operator>)
+</span><span class=lua-keyword>end
+</span><span class=lua-comment>--[[output:
+ 10
+ 8
+ 6
+ 4
+ 2
+ 0
+]]</span>
+</div>
+</pre>
+</html>

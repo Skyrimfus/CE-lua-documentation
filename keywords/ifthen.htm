@@ -1,0 +1,27 @@
+<html>
+<head><link href="../css/default.css" rel="stylesheet"></head>
+<a href="../index.htm" style="float:right">Index</a>
+<pre>
+<h1>if...then...end</h1>
+Conditionally run statements
+<div class="codeUsage"><strong>if</strong> &ltexpression&gt <strong>then</strong> <em>statement</em> <strong>end</strong></div>
+<h2>Parameters</h2>
+<table><tbody><tr><td style="width:15%">expression</td><td style="width:85%">If the expression is true, the statement is executed.</td></tr></tbody></table>
+<h2>Remarks</h2>
+The expression can contain the boolean operators of <strong>and</strong>, <strong>or</strong>, and <strong>not</strong> as well as the logical operators <strong>&lt</strong>, <strong>&lt=</strong>, <strong>&gt</strong>, <strong>&gt=</strong>, <strong>==</strong>, and <strong>~=</strong> grouped with parentheses as needed.
+
+In Lua, any value may represent a expression. Lua consider false and nil as false and anything else as true: Beware that, unlike some other programming
+languages, Lua considers both zero and the empty string as true in conditional statements. 
+
+<h2>Related</h2>
+<a href="ifelse.htm">if..else..elseif..end</a>
+
+</pre>
+
+<pre>
+<h2>Example</h2>
+<div class="codeSnippet">
+<span class=lua-variable>num </span><span class=lua-operator>= </span><span class=lua-number>2
+</span><span class=lua-keyword>if </span><span class=lua-variable>num</span><span class=lua-operator>%</span><span class=lua-number>2</span><span class=lua-operator>==</span><span class=lua-number>0 </span><span class=lua-keyword>then </span><span class=lua-builtinfunc>print</span><span class=lua-operator>(</span><span class=lua-string>"Even number"</span><span class=lua-operator>) </span><span class=lua-keyword>end</span>
+</div></pre>
+</html>

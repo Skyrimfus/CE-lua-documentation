@@ -1,0 +1,34 @@
+<html>
+<head><link href="../css/default.css" rel="stylesheet"></head>
+<a href="../index.htm" style="float:right">Index</a>
+<pre>
+<h1>while</h1>
+Loop based on an expression.
+<div class="codeUsage"><strong>while</strong> &ltexpression&gt <strong>do</strong>
+<em>statements</em>
+...
+<strong>end</strong>
+</div>
+<h2>Parameters</h2>
+<table><tbody>
+<tr><td>expression</td><td>If the expression is true the statements up to <strong>end</strong> will be executed. This loop continues until the expression is false.</td></tr>
+</tbody></table>
+<h2>Remarks</h2>
+The expression is tested before the loop is executed so the loop will be executed zero or more times.
+To create an infinite loop, you can use a true constant as the expression.
+
+
+<h2>Related</h2>
+<a href="break.htm">break</a>, <a href="genericfor.htm">for...in...do</a>, <a href="repeat.htm">repeat...until</a>
+
+
+<h2>Example</h2>
+<div class="codeSnippet">
+<span class=lua-variable>var </span><span class=lua-operator>= </span><span class=lua-number>0
+</span><span class=lua-keyword>while true do</span><span class=lua-comment>--infinite loop
+  </span><span class=lua-variable>var </span><span class=lua-operator>= </span><span class=lua-variable>var</span><span class=lua-operator>+</span><span class=lua-number>1 </span><span class=lua-comment>--increase var by 1 each loop
+  </span><span class=lua-keyword>if </span><span class=lua-variable>var </span><span class=lua-operator>> </span><span class=lua-number>10 </span><span class=lua-keyword>then break end</span><span class=lua-comment>--infinite loop will stop when var is greater than 10
+</span><span class=lua-keyword>end</span>
+</div>
+</pre>
+</html>

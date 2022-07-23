@@ -1,0 +1,29 @@
+<html>
+<head><link href="../css/default.css" rel="stylesheet"></head>
+<a href="../index.htm" style="float:right">Index</a>
+<pre>
+<h1>end</h1>
+Ends the current code-block
+<div class="codeUsage">...
+<strong>end</strong></div>
+<h2>Remarks</h2>
+All local variables created in the code block before the end-statement will be destroyed after the end-statement
+
+
+<h2>Related</h2>
+<a href="genericfor.htm">for...do</a>, <a href="numericfor.htm">for...in...do</a>, <a href="while.htm">while</a>, <a href="ifthen.htm">if...then</a>
+
+
+<h2>Example</h2>
+<div class="codeSnippet">
+<span class=lua-variable>var </span><span class=lua-operator>= </span><span class=lua-number>5
+</span><span class=lua-keyword>do
+  </span><span class=lua-variable>var</span><span class=lua-operator>=</span><span class=lua-variable>var</span><span class=lua-operator>+</span><span class=lua-number>10
+  </span><span class=lua-keyword>local </span><span class=lua-variable>local_var </span><span class=lua-operator>= </span><span class=lua-number>9
+  </span><span class=lua-builtinfunc>print</span><span class=lua-operator>(</span><span class=lua-string>"Local var inside do..end:"</span><span class=lua-operator>,</span><span class=lua-variable>local_var</span><span class=lua-operator>)</span><span class=lua-comment>--outputs 9
+</span><span class=lua-keyword>end
+</span><span class=lua-builtinfunc>print</span><span class=lua-operator>(</span><span class=lua-string>"Local var outside do..end:"</span><span class=lua-operator>,</span><span class=lua-variable>local_var</span><span class=lua-operator>)</span><span class=lua-comment>--outputs nil because the variable was local to the do...end scope, therefore it gets destroyed when we leave that scope
+</span><span class=lua-builtinfunc>print</span><span class=lua-operator>(</span><span class=lua-string>"Global var outside do..end:"</span><span class=lua-operator>,</span><span class=lua-variable>var</span><span class=lua-operator>)</span><span class=lua-comment>--outputs 15</span>
+</div>
+</pre>
+</html>

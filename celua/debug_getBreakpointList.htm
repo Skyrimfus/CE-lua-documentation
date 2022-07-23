@@ -1,0 +1,26 @@
+<html>
+<head><link href="../css/default.css" rel="stylesheet"></head>
+<a href="ceindex.htm" style="float:right">Index</a>
+<pre>
+<h1>debug_getBreakpointList</h1>
+Get a table of breakpoints
+<div class="codeUsage"><strong>debug_getBreakpointList</strong>( )</div>
+<h2>Return Value</h2>
+Returns a table where each index is an address of a breakpoint
+
+
+<h2>Related</h2>
+todo
+
+
+<h2>Example</h2>
+<div class="codeSnippet">
+<div class="codeSnippetToolbar"><a href="" onclick="navigator.clipboard.writeText(this.parentElement.parentElement.children[1].innerText);alert('Copied!')">Copy text</a></div><span class="codeText">
+<span class=lua-comment>--remove all breakpoints:
+</span><span class=lua-variable>list</span> <span class=lua-operator>=</span> <a href=debug_getBreakpointList.htm class=lua-builtinfunc>debug_getBreakpointList</a><span class=lua-operator>(</span><span class=lua-operator>)
+</span><a href=../keywords/numericfor.htm class=lua-keyword>for</a> <span class=lua-variable>i</span><span class=lua-operator>=</span><span class=lua-number>1</span><span class=lua-operator>,</span><span class=lua-variable>#list</span> <a href=../keywords/do.htm class=lua-keyword>do
+</a>  <a href=debug_removeBreakpoint.htm class=lua-builtinfunc>debug_removeBreakpoint</a><span class=lua-operator>(</span><span class=lua-variable>list[i]</span><span class=lua-operator>)
+</span><a href=../keywords/end.htm class=lua-keyword>end</span>
+</span></div>
+</pre>
+</html>

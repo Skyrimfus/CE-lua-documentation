@@ -1,0 +1,25 @@
+<html>
+<head><link href="../css/default.css" rel="stylesheet"></head>
+<a href="../index.htm" style="float:right">Index</a>
+<pre>
+<h1><st>break</h1>
+Stops the execution of the loop
+<div class="codeUsage"><strong>break</strong></div>
+<h2>Remarks</h2>
+After using break, the program will continue executing the code after the loop end
+You can use break to escape <strong>for</strong>, <strong>while</strong> and <strong>repeat</strong> loops
+
+<h2>Related</h2>
+<a href="genericfor.htm">for...do</a>, <a href="numericfor.htm">for...in...do</a>, <a href="while.htm">while</a>, <a href="repeat.htm">repeat</a>
+
+
+<h2>Example: Infinite loop</h2>
+<div class="codeSnippet">
+<span class=lua-variable>var </span><span class=lua-operator>= </span><span class=lua-number>0
+</span><span class=lua-keyword>while true do</span><span class=lua-comment>--infinite loop
+  </span><span class=lua-variable>var </span><span class=lua-operator>= </span><span class=lua-variable>var</span><span class=lua-operator>+</span><span class=lua-number>1 </span><span class=lua-comment>--increase var by 1 each loop
+  </span><span class=lua-keyword>if </span><span class=lua-variable>var </span><span class=lua-operator>> </span><span class=lua-number>10 </span><span class=lua-keyword>then break end</span><span class=lua-comment>--infinite loop will stop when var is greater than 10
+</span><span class=lua-keyword>end</span>
+</div>
+</pre>
+</html>

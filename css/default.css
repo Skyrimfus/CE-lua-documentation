@@ -1,0 +1,158 @@
+html {
+    font-family:'Courier New';
+	color:#000000;
+	font-size:1.25em;
+	overflow:visible;
+	font-weight:400;
+}
+
+
+
+table {
+    border-collapse:collapse;
+    border-color:silver;
+    border-style:solid;
+    border-width:1px;
+    margin-top:5px;
+    width:60%
+}
+
+th {
+/* font-size:.875em;  /* 14px; DOCTYPE without .dld */
+    background-color:#ededed;
+    border-color:silver;
+    border-style:solid;
+    border-width:1px;
+    color:#707070;
+    padding:4px;
+    text-align:left
+}
+
+tr {
+    padding:4px
+}
+
+
+
+table td {
+/* font-size:.875em;  /* 14px; DOCTYPE without .dld */
+    border-color:silver;
+    border-style:solid;
+    border-width:1px;
+    padding:4px
+}
+
+
+
+a,a:link {
+    color:#00709f
+}
+
+a:visited {
+    color:#03697a
+}
+
+a:active {
+    color:#2a2a2a
+}
+
+a:hover {
+    color:#3390b1
+}
+
+a,a:link,a:visited,a:active {
+    text-decoration:none
+}
+
+a:hover {
+    text-decoration:underline
+}
+
+
+
+
+
+
+a.lua-keyword,.lua-keyword{
+	color:#0000ff;
+}
+.lua-string{
+	color:#ff0000;
+}
+.lua-number{
+	color:#0000ff;
+}
+.lua-hex{
+	color:#008f70;
+
+}
+.lua-variable{
+	color:#000000;
+}
+.lua-operator{
+	color:#000000;
+}
+.lua-builtinfunc{
+	color:#0080c0;
+	background-color:#eeeeee;
+}
+.lua-comment{
+	font-style:italic;
+	color:#808080;
+}
+
+.codeSnippetToolBar {
+    height:auto;
+    width:auto;
+	float:right;
+	margin-top:-30px;
+	margin-right:20px;
+	background:#ffffff;
+	z-index:1;
+}
+
+.codeSnippet{
+	position:relative;
+	height:auto;
+	width:auto;
+	top:-3px;
+	clear:both;
+    border-bottom:2px solid #d0d2d2;
+    border-top:2px solid #d0d2d2;
+    border-left:2px solid #d0d2d2;
+	border-right:2px solid #d0d2d2;
+	padding-left:10px;
+	padding-right:10px;
+	padding-bottom:5px;
+	
+	
+}
+.codeUsage{
+	background-color:#ffa;
+	position:relative;
+	height:auto;
+	width:auto;
+	top:-3px;
+	clear:both;
+    border-bottom:2px solid #d0d2d2;
+    border-top:2px solid #d0d2d2;
+    border-left:2px solid #d0d2d2;
+	border-right:2px solid #d0d2d2;
+	padding-left:4px;
+	padding-right:10px;
+	padding-top:5px;
+	padding-bottom:5px;
+	margin-top:5px;
+}
+
+h1{
+	color:#707070;
+}
+h2{
+	color:#db7100;
+	font-size:1.5em;
+	margin:0;
+	padding:0;
+}
+
+

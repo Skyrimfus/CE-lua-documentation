@@ -1,0 +1,44 @@
+<html>
+<head><link href="../css/default.css" rel="stylesheet"></head>
+<a href="ceindex.htm" style="float:right">Index</a>
+<pre>
+<h1>createTimer</h1>
+Create a timer object(<a href="objects/TTimer.htm">TTimer</a>) that executes a function periodically:
+<div class="codeUsage"><strong>createTimer</strong>( [parent = nil [, bEnabled = false]] )</div>
+Create a timer object(TRunOnceTimer) that waits a given delay, executes a function and selfdestroys:
+<div class="codeUsage"><strong>createTimer</strong>( delay, function )</div>
+<h2>Parameters</h2>
+TTimer:
+<table><tbody>
+<tr><td>parent</td><td><strong>[optional] </strong></strong>Parent object</td></tr>
+<tr><td>enabled</td><td><strong>[optional] </strong></strong>Start the timer enabled</td></tr>
+</tbody></table>
+TRunOnceTimer:
+<table><tbody>
+<tr><td>delay</td><td>Ammount of time to delay the execution of the function(in milliseconds)</td></tr>
+<tr><td>function</td><td>Function to execute</td></tr>
+</tbody></table>
+<h2>Return Value</h2>
+Returns the created timer object
+
+
+<h2>Related</h2>
+<a href="objects/TTimer.htm">TTimer Object</a>
+
+
+<h2>Example</h2>
+<div class="codeSnippet">
+<span class=lua-keyword>if </span><span class=lua-variable>tm </span><span class=lua-keyword>then </span><span class=lua-variable>tm.destroy</span><span class=lua-operator>() </span><span class=lua-keyword>end </span><span class=lua-comment>-- if tm is a value other than nil, that means the timer already exists so, destroy it
+</span><span class=lua-variable>tm </span><span class=lua-operator>= </span><span class=lua-builtinfunc>createTimer</span><span class=lua-operator>()
+</span><span class=lua-variable>tm.Interval </span><span class=lua-operator>= 1000</span><span class=lua-comment>--1 second
+</span><span class=lua-variable>tm.OnTimer </span><span class=lua-operator>= </span><span class=lua-keyword>function</span><span class=lua-operator>()
+  </span><span class=lua-builtinfunc>print</span><span class=lua-operator>(</span><span class=lua-string>"Tick"</span><span class=lua-operator>)
+</span><span class=lua-keyword>end
+
+</span><span class=lua-builtinfunc>createTimer</span><span class=lua-operator>(</span><span class=lua-number>10000</span><span class=lua-operator>,</span><span class=lua-keyword>function</span><span class=lua-operator>()</span><span class=lua-comment>--After 10 seconds destroy the original timer
+  </span><span class=lua-variable>tm.destroy</span><span class=lua-operator>()
+  </span><span class=lua-builtinfunc>print</span><span class=lua-operator>(</span><span class=lua-string>"Destroying the Tick timer"</span><span class=lua-operator>)
+</span><span class=lua-keyword>end</span><span class=lua-operator>)</span>
+</div>
+</pre>
+</html>

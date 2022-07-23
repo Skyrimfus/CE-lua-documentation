@@ -1,0 +1,43 @@
+<html>
+<head><link href="../css/default.css" rel="stylesheet"></head>
+<a href="../index.htm" style="float:right">Index</a>
+<pre>
+<h1>repeat...until</h1>
+Loop based on expression
+<div class="codeUsage">repeat
+<em>statements</em>
+...
+until &ltexpression&gt
+</div>
+<h2>Parameters</h2>
+<table><tbody>
+<tr><td>expression</td><td>The statements in between <strong>repeat...until</strong> are executed until the expression is true.</td></tr>
+</tbody></table>
+<h2>Remarks</h2>
+The expression is tested after the loop is executed, so the loop will be executed atleast once.
+
+
+<h2>Related</h2>
+<a href="break.htm">break</a>, <a href="genericfor.htm">for...in...do</a>, <a href="while.htm">while...do</a>
+
+
+<h2>Example</h2>
+<div class="codeSnippet">
+<span class=lua-variable>arr </span><span class=lua-operator>= </span><span class=lua-variable>{1</span><span class=lua-operator>,</span><span class=lua-number>2</span><span class=lua-operator>,</span><span class=lua-number>3</span><span class=lua-operator>,</span><span class=lua-number>4</span><span class=lua-operator>,</span><span class=lua-number>5</span><span class=lua-operator>,</span><span class=lua-variable>6}
+i </span><span class=lua-operator>= </span><span class=lua-number>1
+</span><span class=lua-keyword>repeat
+ </span><span class=lua-builtinfunc>print</span><span class=lua-operator>(</span><span class=lua-variable>arr[i]</span><span class=lua-operator>)
+ </span><span class=lua-variable>i</span><span class=lua-operator>=</span><span class=lua-variable>i</span><span class=lua-operator>+</span><span class=lua-number>1
+</span><span class=lua-keyword>until </span><span class=lua-variable>arr[i]</span><span class=lua-operator>==</span><span class=lua-keyword>nil
+</span><span class=lua-comment>--[[output:
+1
+2
+3
+4
+5
+6
+]]</span>
+</div>
+
+</pre>
+</html>

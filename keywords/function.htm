@@ -1,0 +1,117 @@
+<html>
+<head><link href="../css/default.css" rel="stylesheet"></head>
+<a href="../index.htm" style="float:right">Index</a>
+<pre>
+<h1>function...return</h1>
+Defines a function that takes zero or more arguments and optionally returns a result.
+<div class="codeUsage"><strong>function</strong> functionname ( [param1, param2, ..., paramN] )
+...
+[<strong>return</strong> [value [, value2 [,..., valueN]]]]
+<strong>end</strong>
+</div>
+<h2>Parameters</h2>
+The parameters(arguments) are set by you. You later call the function like any other built-in function.
+
+
+<h2>Remarks</h2>
+<a href="https://www.lua.org/pil/5.html">Functions</a>
+<a href="https://www.lua.org/pil/6.html">More about Functions</a>
+
+Functions need to be defined before they are called.
+Variables and functions are case-sensitive. <em>someFunc</em> and <em>somefunc</em> are not the same.
+
+You can set the function parameter as ..., and that will capture all (extra) arguments that the function was called with(See examples below)
+You can return multiple values(See examples below)
+
+
+
+<h2>Example 1</h2>
+<div class="codeSnippet">
+<span class=lua-keyword>function </span><span class=lua-variable>sayHi</span><span class=lua-operator>()
+  </span><span class=lua-builtinfunc>print</span><span class=lua-operator>(</span><span class=lua-string>"hi"</span><span class=lua-operator>)
+</span><span class=lua-keyword>end
+
+</span><span class=lua-variable>sayHi</span><span class=lua-operator>()</span>
+</div>
+<h2>Example 2</h2>
+<div class="codeSnippet">
+<span class=lua-keyword>function </span><span class=lua-variable>greetUser</span><span class=lua-operator>(</span><span class=lua-variable>username</span><span class=lua-operator>)
+ </span><span class=lua-builtinfunc>print</span><span class=lua-operator>(</span><span class=lua-string>"Hello"</span><span class=lua-operator>, </span><span class=lua-variable>username</span><span class=lua-operator>)
+</span><span class=lua-keyword>end
+
+</span><span class=lua-variable>greetUser</span><span class=lua-operator>(</span><span class=lua-string>"Adam"</span><span class=lua-operator>)
+</span><span class=lua-comment>--output: Hello Adam</span>
+</div>
+<h2>Example 3</h2>
+<div class="codeSnippet">
+<span class=lua-keyword>function </span><span class=lua-variable>QueryUserInfo</span><span class=lua-operator>(</span><span class=lua-variable>name</span><span class=lua-operator>, </span><span class=lua-variable>age</span><span class=lua-operator>, </span><span class=lua-variable>...</span><span class=lua-operator>)
+  </span><span class=lua-keyword>local </span><span class=lua-variable>args </span><span class=lua-operator>= {...}</span><span class=lua-comment>--extra arguments will be placed inside the args table
+  </span><span class=lua-builtinfunc>print</span><span class=lua-operator>(</span><span class=lua-string>"Hello"</span><span class=lua-operator>, </span><span class=lua-variable>name</span><span class=lua-operator>)
+  </span><span class=lua-builtinfunc>print</span><span class=lua-operator>(</span><span class=lua-string>"You are"</span><span class=lua-operator>, </span><span class=lua-variable>age</span><span class=lua-operator>,</span><span class=lua-string>"years old!"</span><span class=lua-operator>)
+  </span><span class=lua-keyword>if </span><span class=lua-variable>#args </span><span class=lua-operator>== </span><span class=lua-number>0 </span><span class=lua-keyword>then return end</span><span class=lua-comment>--if the user provides no extra arguments, then end the function
+
+  </span><span class=lua-builtinfunc>print</span><span class=lua-operator>(</span><span class=lua-string>"Other information you provided:"</span><span class=lua-operator>)
+  </span><span class=lua-keyword>for </span><span class=lua-variable>i</span><span class=lua-operator>=</span><span class=lua-number>1</span><span class=lua-operator>,</span><span class=lua-variable>#args </span><span class=lua-keyword>do
+    </span><span class=lua-builtinfunc>print</span><span class=lua-operator>(</span><span class=lua-variable>args[i]</span><span class=lua-operator>)
+  </span><span class=lua-keyword>end
+end
+
+</span><span class=lua-variable>QueryUserInfo</span><span class=lua-operator>(</span><span class=lua-string>"Adam"</span><span class=lua-operator>, </span><span class=lua-number>29</span><span class=lua-operator>, </span><span class=lua-string>"I like coding"</span><span class=lua-operator>, </span><span class=lua-number>123</span><span class=lua-operator>, </span><span class=lua-string>"Cool!"</span><span class=lua-operator>)
+
+</span><span class=lua-comment>--[[Output:
+Hello Adam
+You are 29 years old!
+Other information you provided:
+I like coding
+123
+Cool!
+]]</span>
+</div>
+<h2>Example 3</h2>
+<div class="codeSnippet">
+<span class=lua-keyword>function </span><span class=lua-variable>a</span><span class=lua-operator>()
+ </span><span class=lua-keyword>return </span><span class=lua-number>1</span><span class=lua-operator>,</span><span class=lua-number>2</span><span class=lua-operator>,</span><span class=lua-number>3
+</span><span class=lua-keyword>end
+
+</span><span class=lua-variable>x</span><span class=lua-operator>,</span><span class=lua-variable>y</span><span class=lua-operator>,</span><span class=lua-variable>z </span><span class=lua-operator>= </span><span class=lua-variable>a</span><span class=lua-operator>()
+</span><span class=lua-builtinfunc>print</span><span class=lua-operator>(</span><span class=lua-variable>x</span><span class=lua-operator>,</span><span class=lua-variable>y</span><span class=lua-operator>,</span><span class=lua-variable>z</span><span class=lua-operator>)</span><span class=lua-comment>--output: 1 2 3
+
+</span><span class=lua-variable>b </span><span class=lua-operator>= </span><span class=lua-variable>a</span><span class=lua-operator>()
+</span><span class=lua-builtinfunc>print</span><span class=lua-operator>(</span><span class=lua-variable>b</span><span class=lua-operator>)</span><span class=lua-comment>-- output: 1
+
+</span><span class=lua-variable>c</span><span class=lua-operator>, </span><span class=lua-variable>_</span><span class=lua-operator>, </span><span class=lua-variable>d </span><span class=lua-operator>= </span><span class=lua-variable>a</span><span class=lua-operator>()
+</span><span class=lua-builtinfunc>print</span><span class=lua-operator>(</span><span class=lua-variable>c</span><span class=lua-operator>,</span><span class=lua-variable>d</span><span class=lua-operator>)</span><span class=lua-comment>--output 1 3 </span>
+</div>
+<h2>Example 4</h2>
+<div class="codeSnippet">
+<span class=lua-keyword>function </span><span class=lua-variable>getRange</span><span class=lua-operator>(</span><span class=lua-variable>start</span><span class=lua-operator>,</span><span class=lua-variable>stop</span><span class=lua-operator>)
+  </span><span class=lua-keyword>local </span><span class=lua-variable>array </span><span class=lua-operator>= </span><span class=lua-variable>{}
+  </span><span class=lua-keyword>for </span><span class=lua-variable>i</span><span class=lua-operator>=</span><span class=lua-variable>start</span><span class=lua-operator>,</span><span class=lua-variable>stop </span><span class=lua-keyword>do
+    </span><span class=lua-variable>array[#array</span><span class=lua-operator>+</span><span class=lua-variable>1] </span><span class=lua-operator>= </span><span class=lua-variable>i
+  </span><span class=lua-keyword>end
+
+  return </span><span class=lua-builtinfunc>unpack</span><span class=lua-operator>(</span><span class=lua-variable>array</span><span class=lua-operator>)
+</span><span class=lua-keyword>end
+
+</span><span class=lua-variable>val1</span><span class=lua-operator>, </span><span class=lua-variable>val2</span><span class=lua-operator>, </span><span class=lua-variable>val3</span><span class=lua-operator>, </span><span class=lua-variable>val4</span><span class=lua-operator>, </span><span class=lua-variable>_</span><span class=lua-operator>, </span><span class=lua-variable>val5   </span><span class=lua-operator>= </span><span class=lua-variable>getRange</span><span class=lua-operator>(</span><span class=lua-number>1</span><span class=lua-operator>,</span><span class=lua-number>10</span><span class=lua-operator>)</span><span class=lua-comment>--function returns multiple results, they are stored in order
+</span><span class=lua-builtinfunc>print</span><span class=lua-operator>(</span><span class=lua-variable>val1</span><span class=lua-operator>, </span><span class=lua-variable>val2</span><span class=lua-operator>, </span><span class=lua-variable>val3</span><span class=lua-operator>, </span><span class=lua-variable>val4</span><span class=lua-operator>, </span><span class=lua-variable>val5</span><span class=lua-operator>)</span><span class=lua-comment>--output: 1 2 3 4 6
+
+</span><span class=lua-variable>range </span><span class=lua-operator>= </span><span class=lua-variable>{getRange</span><span class=lua-operator>(</span><span class=lua-number>1</span><span class=lua-operator>,</span><span class=lua-number>10</span><span class=lua-operator>)</span><span class=lua-variable>}
+</span><span class=lua-keyword>for </span><span class=lua-variable>i</span><span class=lua-operator>=</span><span class=lua-number>1</span><span class=lua-operator>,</span><span class=lua-variable>#range </span><span class=lua-keyword>do
+  </span><span class=lua-builtinfunc>print</span><span class=lua-operator>(</span><span class=lua-variable>i</span><span class=lua-operator>)
+</span><span class=lua-keyword>end
+</span><span class=lua-comment>--[[output:
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10]]
+</span>
+</div>
+</pre>
+</html>
