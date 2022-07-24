@@ -3,13 +3,17 @@
 <a href="ceindex.htm" style="float:right">Index</a>
 <pre>
 <h1>AOBScan</h1>
-Short description
-<div class="codeUsage"><strong>AOBScan</strong>( )</div>
+Scan for bytes
+<div class="codeUsage"><strong>AOBScan</strong>( x, ,x, x, x, x, ... )</div>
+Scan for bytes
+<div class="codeUsage"><strong>AOBScan</strong>( aobstring, [ protectionflags, [ alignmenttype, [ alignmentparam ]]]</div>
 <h2>Parameters</h2>
 <table><tbody>
 <tr><td>variable</td><td>The name of the variable(s) to be declared</td></tr>
 <tr><td>value</td><td><strong>[optional] </strong></strong>A value to be assigned</td></tr>
 </tbody></table>
+<h2>Return Value</h2>
+scans the currently opened process and returns a StringList object containing all the results. don't forget to free this list when done
 <h2>Remarks</h2>
 remarks
 
