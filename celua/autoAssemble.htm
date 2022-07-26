@@ -3,12 +3,13 @@
 <a href="ceindex.htm" style="float:right">Index</a>
 <pre>
 <h1>autoAssemble</h1>
-Short description
-<div class="codeUsage"><strong>autoAssemble</strong>( )</div>
+Executes the auto assembler script
+<div class="codeUsage"><strong>autoAssemble</strong>( script [, bTargetSelf [, disableInfo ]])</div>
 <h2>Parameters</h2>
 <table><tbody>
-<tr><td>variable</td><td>The name of the variable(s) to be declared</td></tr>
-<tr><td>value</td><td><strong>[optional] </strong></strong>A value to be assigned</td></tr>
+<tr><td>script</td><td>The auto assembler script to be executed</td></tr>
+<tr><td>bTargetSelf</td><td>If set to true, it will assemble into Cheat Engines local memory</td></tr>
+<tr><td>disableInfo </td><td>todo TODO</td></tr>
 </tbody></table>
 <h2>Remarks</h2>
 remarks
@@ -23,5 +24,7 @@ todo
 <div class="codeSnippetToolbar"><a href="" onclick="navigator.clipboard.writeText(this.parentElement.parentElement.children[1].innerText);alert('Copied!')">Copy text</a></div><span class="codeText">
 script
 </span></div>
+autoAssemble(text, targetself OPTIONAL, disableInfo OPTIONAL) : runs the auto assembler with the given text. Returns true on success, with as secondary a table you can use when disabling (if targetself is set it will assemble into Cheat Engine itself). If disableInfo is provided the [Disable] section will be handled
+autoAssemble(text, disableInfo OPTIONAL)
 </pre>
 </html>

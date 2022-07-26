@@ -12,14 +12,17 @@ Pauses the script execution
 <h2>Remarks</h2>
 Not precise under 10 ms
 
+It's not advised to use sleep. If you need to time something use timers(<a href="createTimer.htm">createTimer</a>)
 
 <h2>Related</h2>
-todo
+<a href="createTimer.htm">createTimer</a>
 
 
 <h2>Example</h2>
 <div class="codeSnippet">
-todo
+<a href=print.htm class=lua-builtinfunc>print</a><span class=lua-operator>(</span><span class=lua-string>"Let's wait 1 second"</span><span class=lua-operator>)
+</span><a href=sleep.htm class=lua-builtinfunc>sleep</a><span class=lua-operator>(</span><span class=lua-number>1000</span><span class=lua-operator>)
+</span><a href=print.htm class=lua-builtinfunc>print</a><span class=lua-operator>(</span><span class=lua-string>"Done waiting!"</span><span class=lua-operator>)</span>
 </div>
 </pre>
 </html>

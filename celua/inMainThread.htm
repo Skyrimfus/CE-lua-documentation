@@ -3,25 +3,22 @@
 <a href="ceindex.htm" style="float:right">Index</a>
 <pre>
 <h1>inMainThread</h1>
-Short description
+Check if the current code is running inside the main thread
 <div class="codeUsage"><strong>inMainThread</strong>( )</div>
-<h2>Parameters</h2>
-<table><tbody>
-<tr><td>variable</td><td>The name of the variable(s) to be declared</td></tr>
-<tr><td>value</td><td><strong>[optional] </strong></strong>A value to be assigned</td></tr>
-</tbody></table>
-<h2>Remarks</h2>
-remarks
-
-
-<h2>Related</h2>
-todo
+<h2>Return Value</h2>
+Returns true if the current code is running inside the main thread, otherwise returns false
 
 
 <h2>Example</h2>
 <div class="codeSnippet">
 <div class="codeSnippetToolbar"><a href="" onclick="navigator.clipboard.writeText(this.parentElement.parentElement.children[1].innerText);alert('Copied!')">Copy text</a></div><span class="codeText">
-script
+<a href=../keywords/function.htm class=lua-keyword>function</a> <span class=lua-variable>print_if_main_thread</span><span class=lua-operator>(</span><span class=lua-operator>)
+</span><a href=../keywords/ifthen.htm class=lua-keyword>if</a> <a href=inMainThread.htm class=lua-builtinfunc>inMainThread</a><span class=lua-operator>(</span><span class=lua-operator>)</span> <a href=../keywords/ifthen.htm class=lua-keyword>then</a> <a href=print.htm class=lua-builtinfunc>print</a><span class=lua-operator>(</span><span class=lua-string>"INSIDE MAIN THREAD"</span><span class=lua-operator>)</span> <a href=../keywords/ifelse.htm class=lua-keyword>else</a> <a href=print.htm class=lua-builtinfunc>print</a><span class=lua-operator>(</span><span class=lua-string>"NOT INSIDE MAIN THREAD"</span><span class=lua-operator>)</span> <a href=../keywords/end.htm class=lua-keyword>end
+</a><a href=../keywords/end.htm class=lua-keyword>end
+
+</a><span class=lua-variable>print_if_main_thread</span><span class=lua-operator>(</span><span class=lua-operator>)</span><span class=lua-comment>--OUTPUT: INSIDE MAIN THREAD
+
+</span><a href=createThread.htm class=lua-builtinfunc>createThread</a><span class=lua-operator>(</span><span class=lua-variable>print_if_main_thread</span><span class=lua-operator>)</span><span class=lua-comment>--OUTPUT: NOT INSIDE MAIN THREAD</span>
 </span></div>
 </pre>
 </html>

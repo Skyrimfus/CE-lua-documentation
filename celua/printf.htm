@@ -4,22 +4,24 @@
 <pre>
 <h1>printf</h1>
 Prints formated text to the output in Lua Engine window
-<div class="codeUsage"><strong>printf</strong>( formattedString [,  value1 [, value2, [...] ]] )</div>
+<div class="codeUsage"><strong>printf</strong>( formatedString [, variable1 [, variableN ,[ ... ]]] )</div>
 <h2>Parameters</h2>
 <table><tbody>
-<tr><td>text</td><td>Text to be printed</td></tr>
+<tr><td>formatedString</td><td>A string to be formated</td></tr>
+<tr><td>variableN</td><td>Variable(s) that will be used in formatting</td></tr>
 </tbody></table>
 <h2>Remarks</h2>
-Same as <a href="print.htm">print</a>(string.format(formattedString, value1, value2, ...))
+Same as print(string.format(formatedString [, variable1 [, variableN ,[ ... ]]]))
 
 
 <h2>Related</h2>
-todo
+<a href="print.htm">print</a>
 
 
 <h2>Example</h2>
 <div class="codeSnippet">
-todo
+<a href=printf.htm class=lua-builtinfunc>printf</a><span class=lua-operator>(</span><span class=lua-string>"0x%X"</span><span class=lua-operator>,</span><span class=lua-number>15</span><span class=lua-operator>)
+</span><span class=lua-comment>--outputs "0xF"</span>
 </div>
 </pre>
 </html>
