@@ -1,0 +1,56 @@
+<html>
+<head><link href="../css/default.css" rel="stylesheet"></head>
+<a href="ceindex.htm" style="float:right">Index</a>
+<h1>debug_setBreakpoint</h1>
+Sets a breakpoint on an address
+<div class="codeUsage"><strong>debug_setBreakpoint</strong>( address [, size, trigger = bptExecute [, method = bpmDebugRegister ]] [, function] )</div>
+<br><h2>Parameters</h2>
+<table><tbody>
+<tr><td>address</td><td>Address where the breakpoint will be placed</td></tr>
+<tr><td>size</td><td>Size(in bytes) of the breakpoint</td></tr>
+<tr><td>trigger</td><td>(0) bptExecute - break when the CPU executes the instruction at the address of the breakpoint<br>
+(1) bptAccess - break when the CPU accesses the address of the breakpoint<br>
+(2) bptWrite - break when the CPU writes to the address of the breakpoint</td></tr>
+<tr><td>method</td><td>What method to use:<br>
+(0) bmpInt3 - Software breakpoint<br>
+(1) bpmDebugRegister - Hardware breakpoint<br>
+(2) bpmException - Exception breakpoint</td></tr>
+<tr><td>function</td><td>The function that will be executed when the breakpoint triggers</td></tr>
+
+</tbody></table>
+<pre>
+<h2>Return Value</h2>
+This function returns ...
+
+
+<h2>Remarks</h2>
+If the trigger is bptExecute then size is ignored
+
+If the <em>function</em> parameter is defined: 
+ -When the breakpoint gets hit, it will execute that function and continue the program. 
+ -If you want to halt the execution return 1 in the function(must return 1, returning true or some other expression results in the program running)
+ -The instruction will get executed after the function finishes
+ -You can access read and write <a href="ceindex.htm#debugvars">DEBUG</a> variables inside the function
+    Note: When writing registers make sure to use appropriate ones depending on the process bitness!
+
+It is possible to set 2 breakpoints on the same address which may lead to unwanted results. Use <em>debug_removeBreakpoint</em>
+ before setting a breakpoint to circumvent this
+
+
+
+<h2>Related</h2>
+<a href="debug_removeBreakpoint.htm">debug_removeBreakpoint</a>
+</pre>
+
+<h2>Example</h2>
+<pre>
+<div class="codeSnippet"><div class="codeSnippetToolbar"><a href="" onclick="navigator.clipboard.writeText(this.parentElement.parentElement.children[1].innerText);alert('Copied!')">Copy text</a></div><span class="codeText">
+<span class=lua-variable>arr</span> <span class=lua-operator>=</span> <span class=lua-variable>{}
+</span><a href=../keywords/numericfor.htm class=lua-keyword>for</a> <span class=lua-variable>i</span><span class=lua-operator>=</span><span class=lua-number>1</span><span class=lua-operator>,</span><span class=lua-number>100</span> <a href=../keywords/do.htm class=lua-keyword>do
+</a>  <span class=lua-variable>arr[i]</span> <span class=lua-operator>=</span> <span class=lua-variable>i</span><span class=lua-operator>%</span><span class=lua-number>5
+</span><a href=../keywords/end.htm class=lua-keyword>end
+</a><a href=print.htm class=lua-builtinfunc>print</a><span class=lua-operator>(</span><span class=lua-variable>arr[3]</span><span class=lua-operator>)
+</span><span class=lua-comment>--example code</span>
+</span></div>
+</pre>
+</html>

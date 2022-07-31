@@ -1,0 +1,28 @@
+<html>
+<head><link href="../css/default.css" rel="stylesheet"></head>
+<a href="ceindex.htm" style="float:right">Index</a>
+<pre>
+<h1>sleep</h1>
+Pauses the script execution
+<div class="codeUsage"><strong>sleep</strong>( delay )</div>
+<h2>Parameters</h2>
+<table><tbody>
+<tr><td>delay</td><td>Amount of time to pause (in milliseconds)</td></tr>
+</tbody></table>
+<h2>Remarks</h2>
+Not precise under 10 ms
+
+It's not advised to use sleep. If you need to time something use timers(<a href="createTimer.htm">createTimer</a>)
+
+<h2>Related</h2>
+<a href="createTimer.htm">createTimer</a>
+
+
+<h2>Example</h2>
+<div class="codeSnippet">
+<a href=print.htm class=lua-builtinfunc>print</a><span class=lua-operator>(</span><span class=lua-string>"Let's wait 1 second"</span><span class=lua-operator>)
+</span><a href=sleep.htm class=lua-builtinfunc>sleep</a><span class=lua-operator>(</span><span class=lua-number>1000</span><span class=lua-operator>)
+</span><a href=print.htm class=lua-builtinfunc>print</a><span class=lua-operator>(</span><span class=lua-string>"Done waiting!"</span><span class=lua-operator>)</span>
+</div>
+</pre>
+</html>

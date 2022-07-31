@@ -1,11 +1,10 @@
 <html>
 <head><link href="../css/default.css" rel="stylesheet"></head>
 <a href="ceindex.htm" style="float:right">Index</a>
-<pre>
-<h1>debug_setBreakpoint</h1>
+<pre><h1>debug_setBreakpoint</h1>
 Sets a breakpoint on an address
 <div class="codeUsage"><strong>debug_setBreakpoint</strong>( address [, size, trigger = bptExecute [, method = bpmDebugRegister ]] [, function] )</div>
-<h2>Parameters</h2>
+<br><h2>Parameters</h2></pre>
 <table><tbody>
 <tr><td>address</td><td>Address where the breakpoint will be placed</td></tr>
 <tr><td>size</td><td>Size(in bytes) of the breakpoint</td></tr>
@@ -19,39 +18,46 @@ Sets a breakpoint on an address
 <tr><td>function</td><td>The function that will be executed when the breakpoint triggers</td></tr>
 
 </tbody></table>
+<pre>
+<h2>Return Value</h2>
+This function returns ...
+
+
 <h2>Remarks</h2>
 If the trigger is bptExecute then size is ignored
 
 If the <em>function</em> parameter is defined: 
  -When the breakpoint gets hit, it will execute that function and continue the program. 
  -If you want to halt the execution return 1 in the function(must return 1, returning true or some other expression results in the program running)
- -The instruction will get executed after the function finishes
+ -The instruction at the <em>address</em> will get executed after the function finishes
  -You can access read and write <a href="ceindex.htm#debugvars">DEBUG</a> variables inside the function
     Note: When writing registers make sure to use appropriate ones depending on the process bitness!
 
 It is possible to set 2 breakpoints on the same address which may lead to unwanted results. Use <em>debug_removeBreakpoint</em>
  before setting a breakpoint to circumvent this
 
+
+
 <h2>Related</h2>
 <a href="debug_removeBreakpoint.htm">debug_removeBreakpoint</a>
 
+</pre>
 
-<h2>Example 1</h2>
+<pre><h2>Example 1</h2>
 Make sure Cheat Engine Tutorial(64-bit) is running!
 Run this script, go to step 2 and press HIT me
 
-<div class="codeSnippet">
-<div class="codeSnippetToolbar"><a href="" onclick="navigator.clipboard.writeText(this.parentElement.parentElement.children[1].innerText);alert('Copied!')">Copy text</a></div><span class="codeText">
+<div class="codeSnippet"><div class="codeSnippetToolbar"><a href="" onclick="navigator.clipboard.writeText(this.parentElement.parentElement.children[1].innerText);alert('Copied!')">Copy text</a></div><span class="codeText">
 <span class=lua-variable>HITaddress</span> <span class=lua-operator>=</span> <a href=getAddressSafe.htm class=lua-builtinfunc>getAddressSafe</a><span class=lua-operator>(</span><span class=lua-string>"Tutorial-x86_64.exe+2B4BC"</span><span class=lua-operator>)
 </span><a href=../keywords/ifthen.htm class=lua-keyword>if</a> <a href=../index.htm#1 class=lua-keyword>not</a> <a href=OpenProcess.htm class=lua-builtinfunc>OpenProcess</a><span class=lua-operator>(</span><span class=lua-string>"Tutorial-x86_64.exe"</span><span class=lua-operator>)</span> <a href=../index.htm#1 class=lua-keyword>or</a> <span class=lua-variable>HITaddress</span> <span class=lua-operator>=</span><span class=lua-operator>=</span> <a href=../index.htm#2 class=lua-keyword>nil</a> <a href=../keywords/ifthen.htm class=lua-keyword>then</a> <a href=print.htm class=lua-builtinfunc>print</a><span class=lua-operator>(</span><span class=lua-string>"Can't start :("</span><span class=lua-operator>)</span><span class=lua-operator>;</span><a href=../keywords/function.htm class=lua-keyword>return</a> <a href=../keywords/end.htm class=lua-keyword>end
 </a><a href=debug_removeBreakpoint.htm class=lua-builtinfunc>debug_removeBreakpoint</a><span class=lua-operator>(</span><span class=lua-variable>HITaddress</span><span class=lua-operator>)
 </span><a href=debug_setBreakpoint.htm class=lua-builtinfunc>debug_setBreakpoint</a><span class=lua-operator>(</span><span class=lua-variable>HITaddress</span><span class=lua-operator>,</span> <a href=../keywords/function.htm class=lua-keyword>function</a><span class=lua-operator>(</span><span class=lua-operator>)
 </span>  <a href=printf.htm class=lua-builtinfunc>printf</a><span class=lua-operator>(</span><span class=lua-string>"Ouch! You just got hit and lost %s HP!"</span><span class=lua-operator>,</span> <span class=lua-variable>EAX</span><span class=lua-operator>)
 </span><a href=../keywords/end.htm class=lua-keyword>end</a><span class=lua-operator>)</span>
-</span></div>
-<h2>Example 2</h2>
-<div class="codeSnippet">
-<div class="codeSnippetToolbar"><a href="" onclick="navigator.clipboard.writeText(this.parentElement.parentElement.children[1].innerText);alert('Copied!')">Copy text</a></div><span class="codeText">
+</span></div></pre>
+
+<pre><h2>Example 2</h2>
+<div class="codeSnippet"><div class="codeSnippetToolbar"><a href="" onclick="navigator.clipboard.writeText(this.parentElement.parentElement.children[1].innerText);alert('Copied!')">Copy text</a></div><span class="codeText">
 <span class=lua-variable>HITaddress</span> <span class=lua-operator>=</span> <a href=getAddressSafe.htm class=lua-builtinfunc>getAddressSafe</a><span class=lua-operator>(</span><span class=lua-string>"Tutorial-x86_64.exe+2B4BC"</span><span class=lua-operator>)
 
 </span><a href=../keywords/ifthen.htm class=lua-keyword>if</a> <a href=../index.htm#1 class=lua-keyword>not</a> <a href=OpenProcess.htm class=lua-builtinfunc>OpenProcess</a><span class=lua-operator>(</span><span class=lua-string>"Tutorial-x86_64.exe"</span><span class=lua-operator>)</span> <a href=../index.htm#1 class=lua-keyword>or</a> <span class=lua-variable>HITaddress</span> <span class=lua-operator>=</span><span class=lua-operator>=</span> <a href=../index.htm#2 class=lua-keyword>nil</a> <a href=../keywords/ifthen.htm class=lua-keyword>then</a> <a href=print.htm class=lua-builtinfunc>print</a><span class=lua-operator>(</span><span class=lua-string>"Can't start :("</span><span class=lua-operator>)</span><span class=lua-operator>;</span><a href=../keywords/function.htm class=lua-keyword>return</a> <a href=../keywords/end.htm class=lua-keyword>end
@@ -61,16 +67,17 @@ Run this script, go to step 2 and press HIT me
 </span>  <span class=lua-variable>RAX</span> <span class=lua-operator>=</span> <span class=lua-operator>-</span><span class=lua-number>5</span><span class=lua-operator></span><span class=lua-comment>--this should increase our health by 5( HP - -5 = HP+5)
 </span><a href=../keywords/end.htm class=lua-keyword>end</a><span class=lua-operator>)
 </span>
-</span></div>
+</span></div></pre>
 
-<h2>Example</h2>
-<div class="codeSnippet">
-<div class="codeSnippetToolbar"><a href="" onclick="navigator.clipboard.writeText(this.parentElement.parentElement.children[1].innerText);alert('Copied!')">Copy text</a></div><span class="codeText">
-<a href=../keywords/numericfor.htm class=lua-keyword>for</a> <span class=lua-variable>i</span><span class=lua-operator>=</span><span class=lua-number>1</span><span class=lua-operator>,</span> <span class=lua-number>5</span> <a href=../keywords/do.htm class=lua-keyword>do
-</a><a href=print.htm class=lua-builtinfunc>print</a><span class=lua-operator>(</span><span class=lua-string>"hi"</span><span class=lua-operator>)
-</span><a href=../keywords/end.htm class=lua-keyword>end</span>
-
-</div>
+<pre><h2>Example 2</h2>
+<div class="codeSnippet"><div class="codeSnippetToolbar"><a href="" onclick="navigator.clipboard.writeText(this.parentElement.parentElement.children[1].innerText);alert('Copied!')">Copy text</a></div><span class="codeText">
+<span class=lua-variable>HPaddress</span> <span class=lua-operator>=</span> <a href=getAddressSafe.htm class=lua-builtinfunc>getAddressSafe</a><span class=lua-operator>(</span><span class=lua-string>"[Tutorial-x86_64.exe+325A70]+7F8"</span><span class=lua-operator>)
+</span><a href=../keywords/ifthen.htm class=lua-keyword>if</a> <span class=lua-variable>HPaddress</span> <span class=lua-operator>=</span><span class=lua-operator>=</span> <a href=../index.htm#2 class=lua-keyword>nil</a> <a href=../keywords/ifthen.htm class=lua-keyword>then</a> <a href=print.htm class=lua-builtinfunc>print</a><span class=lua-operator>(</span><span class=lua-string>"Could not resolve the HP pointer"</span><span class=lua-operator>)</span><span class=lua-operator>;</span> <a href=../keywords/function.htm class=lua-keyword>return</a> <a href=../keywords/end.htm class=lua-keyword>end
+</a><a href=debug_removeBreakpoint.htm class=lua-builtinfunc>debug_removeBreakpoint</a><span class=lua-operator>(</span><span class=lua-variable>HPaddress</span><span class=lua-operator>)
+</span><a href=debug_setBreakpoint.htm class=lua-builtinfunc>debug_setBreakpoint</a><span class=lua-operator>(</span><span class=lua-variable>HPaddress</span><span class=lua-operator>,</span> <span class=lua-number>4</span><span class=lua-operator>,</span> <span class=lua-variable>bptWrite</span><span class=lua-operator>,</span> <a href=../keywords/function.htm class=lua-keyword>function</a><span class=lua-operator>(</span><span class=lua-variable>...</span><span class=lua-operator>)
+</span>  <a href=printf.htm class=lua-builtinfunc>printf</a><span class=lua-operator>(</span><span class=lua-string>"Something wrote to the HP and now your health is: %s"</span><span class=lua-operator>,</span> <a href=readInteger.htm class=lua-builtinfunc>readInteger</a><span class=lua-operator>(</span><span class=lua-variable>HPaddress</span><span class=lua-operator>)</span><span class=lua-operator>)
+</span><a href=../keywords/end.htm class=lua-keyword>end</a><span class=lua-operator>)</span>
+</span></div></pre>
 
 </pre>
 </html>

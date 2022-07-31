@@ -1,0 +1,23 @@
+<html>
+<head><link href="../css/default.css" rel="stylesheet"></head>
+<a href="ceindex.htm" style="float:right">Index</a>
+<pre>
+<h1>targetIs64Bit</h1>
+Check attached process' bitness
+<div class="codeUsage"><strong>targetIs64Bit</strong>()</div>
+<h2>Result</h2>
+Returns true if the target process is 64-bit, false if 32-bit
+
+<h2>Related</h2>
+<a href="cheatEngineIs64Bit.htm">cheatEngineIs64Bit</a>
+
+<h2>Example</h2>
+<div class="codeSnippet">
+<a href=../keywords/ifthen.htm class=lua-keyword>if</a> <a href=targetIs64Bit.htm class=lua-builtinfunc>targetIs64Bit</a><span class=lua-operator>(</span><span class=lua-operator>)</span> <a href=../keywords/ifthen.htm class=lua-keyword>then
+</a>  <span class=lua-variable>read_pointer</span> <span class=lua-operator>=</span> <a href=readQword.htm class=lua-builtinfunc>readQword
+</a><a href=../keywords/ifelse.htm class=lua-keyword>else
+</a>  <span class=lua-variable>read_pointer</span> <span class=lua-operator>=</span> <a href=readInteger.htm class=lua-builtinfunc>readInteger
+</a><a href=../keywords/end.htm class=lua-keyword>end</span>
+</div>
+</pre>
+</html>

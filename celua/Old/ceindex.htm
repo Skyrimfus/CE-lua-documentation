@@ -1,0 +1,80 @@
+<html>
+<head>Made for Cheat Engine 7.4<link href="../css/default.css" rel="stylesheet"></head>
+<a href="../index.htm" style="float:right">Index</a>
+<pre>
+<title>Cheat engine specific</title>
+<h2>Global Variables</h2>
+<table style="margin-left:10px"><tbody>
+<tr><td>MainForm</td><td>Main Cheat Engine window object</td></tr>
+<tr><td>AddressList</td><td>AddressList of the main CE gui</td></tr>
+<tr><td>process</td><td>A string containing the attached process name(nil when not attached)</td></tr>
+<tr><td>TrainerOrigin</td><td>Description todo</td></tr>
+</tbody></table>
+<h2 id="debugvars">Debug Variables</h2>
+ These variables get assigned a value after CE has attached to a process and a breakpoint has been hit:
+ 
+<table style="margin-left:10px"><tbody>
+<tr><td>EFLAGS</td><td>Status register containing the current state of the CPU <a href="https://en.wikipedia.org/wiki/FLAGS_register">Wikipedia article</a></td></tr>
+</tbody></table>
+<table style="margin-left:10px"><tbody>
+<tr><td>EAX, EBX, ECX, EDX, EDI, ESI, EBP, ESP, EIP</td><td>Available on 32 and 64-bit processes</td></tr>
+<tr><td>RAX, RBX, RCX, RDX, RDI, RSI, RBP, RSP, RIP, R8, R9, R10, R11, R12, R13, R14, R15</td><td>Available only on 64-bit processes</td></tr>
+</tbody></table>
+ If you want to get the XMM registers use <a href="debug_getXMMPointer.htm">debug_getXMMPointer</a>
+ 
+<h2>Auto-assembler Variables</h2>
+ These variables get assigned a value only when used in an auto-assembler script. The variables are local to the script:
+ 
+<table style="margin-left:10px"><tbody>
+<tr><td>syntaxcheck</td><td>Control variable that is (evaluated to) true if the script is being parsed and not executed</td></tr>
+<tr><td>memrec</td><td>The memory record object that holds the current auto-assembler script</td></tr>
+</tbody></table>
+
+<h1>Main functions</h1>
+<h2>Memory operations:</h2>
+<a href="readByte.htm">readByte</a>
+<a href="readShortInteger.htm">readShortInteger</a>
+<a href="readBytes.htm">readBytes</a>
+<a href="readSmallInteger.htm">readSmallInteger</a>
+<a href="readInteger.htm">readInteger</a>
+<a href="readQword.htm">readQword</a>
+<a href="readPointer.htm">readPointer</a>
+<a href="readFloat.htm">readFloat</a>
+<a href="readDouble.htm">readDouble</a>
+<a href="readString.htm">readString</a>
+
+<a href="readByteLocal.htm">readByteLocal</a>
+<a href="readShortIntegerLocal.htm">readShortIntegerLocal</a>
+<a href="readBytesLocal.htm">readBytesLocal</a>
+<a href="readSmallIntegerLocal.htm">readSmallIntegerLocal</a>
+<a href="readIntegerLocal.htm">readIntegerLocal</a>
+<a href="readQwordLocal.htm">readQwordLocal</a>
+<a href="readPointerLocal.htm">readPointerLocal</a>
+<a href="readFloatLocal.htm">readFloatLocal</a>
+<a href="readDoubleLocal.htm">readDoubleLocal</a>
+<a href="readStringLocal.htm">readStringLocal</a>
+
+<a href="writeByte.htm">writeByte</a>
+<a href="writeShortInteger.htm">writeShortInteger</a>
+<a href="writeBytes.htm">writeBytes</a>
+<a href="writeSmallInteger.htm">writeSmallInteger</a>
+<a href="writeInteger.htm">writeInteger</a>
+<a href="writeQword.htm">writeQword</a>
+<a href="writePointer.htm">writePointer</a>
+<a href="writeFloat.htm">writeFloat</a>
+<a href="writeDouble.htm">writeDouble</a>
+<a href="writeString.htm">writeString</a>
+
+<a href="writeByteLocal.htm">writeByteLocal</a>
+<a href="writeShortIntegerLocal.htm">writeShortIntegerLocal</a>
+<a href="writeBytesLocal.htm">writeBytesLocal</a>
+<a href="writeSmallIntegerLocal.htm">writeSmallIntegerLocal</a>
+<a href="writeIntegerLocal.htm">writeIntegerLocal</a>
+<a href="writeQwordLocal.htm">writeQwordLocal</a>
+<a href="writePointerLocal.htm">writePointerLocal</a>
+<a href="writeFloatLocal.htm">writeFloatLocal</a>
+<a href="writeDoubleLocal.htm">writeDoubleLocal</a>
+<a href="writeStringLocal.htm">writeStringLocal</a>
+
+</pre
+</html>

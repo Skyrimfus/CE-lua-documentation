@@ -1,0 +1,30 @@
+<html>
+<head><link href="../css/default.css" rel="stylesheet"></head>
+<a href="ceindex.htm" style="float:right">Index</a>
+<pre>
+<h1>debug_setBreakpointForThread</h1>
+Sets a breakpoint on an address for a specific thread
+<div class="codeUsage"><strong>debug_setBreakpointThread</strong>( threadID, address [, size, trigger = bptExecute [, method = bpmDebugRegister ]] [, function] )</div>
+<h2>Parameters</h2>
+<table><tbody>
+<tr><td>threadID</td><td>ID of the thread where the breakpoint will be triggered</td></tr>
+<tr><td>address</td><td>Address where the breakpoint will be placed</td></tr>
+<tr><td>size</td><td>Size(in bytes) of the breakpoint</td></tr>
+<tr><td>trigger</td><td>(0) bptExecute - break when the CPU executes the instruction at the address of the breakpoint<br>
+(1) bptAccess - break when the CPU accesses the address of the breakpoint<br>
+(2) bptWrite - break when the CPU writes to the address of the breakpoint</td></tr>
+<tr><td>method</td><td>What method to use:<br>
+(0) bmpInt3 - Software breakpoint<br>
+(1) bpmDebugRegister - Hardware breakpoint<br>
+(2) bpmException - Exception breakpoint</td></tr>
+<tr><td>function</td><td>The function that will be executed when the breakpoint triggers</td></tr>
+
+</tbody></table>
+<h2>Remarks</h2>
+The usage is the same as <a href="debug_setBreakpoint.htm">debug_setBreakpoint</a> but with one additional argument <em>threadID</em>
+
+
+<h2>Related</h2>
+<a href="debug_setBreakpoint.htm">debug_setBreakpoint</a>, <a href="debug_removeBreakpoint.htm">debug_removeBreakpoint</a>
+</pre>
+</html>
