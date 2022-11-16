@@ -1,0 +1,52 @@
+<html>
+<head><link href="../css/default.css" rel="stylesheet"></head>
+<body>
+<title>readBytes</title>
+<a href="ceindex.htm" style="float:right">Index</a>
+<pre><h1>readBytes</h1>
+Read a specific number of bytes
+<div class="codeUsage"><strong>readBytes</strong>( address [, count = 1[, bReturnAsTable = false]])</div>
+<br><h2>Parameters</h2></pre>
+<table><tbody>
+<tr><td>address</td><td>The start address of the byte(s) to be read from</td></tr>
+<tr><td>count</td><td><strong>[optional] </strong></strong>Ammount of bytes to be read<br>default(1)</td></tr>
+<tr><td>bReturnAsTable</td><td><strong>[optional] </strong></strong>If true it will return a table instead of multiple values<br>default(false)</td></tr>
+</tbody></table>
+<pre>
+<h2>Return Value</h2>
+Returns multiple bytes or a table of bytes, depending on the <em>bReturnAsTable</em> argument
+
+
+<h2>Remarks</h2>
+If the memory can't be read, the return value is nil
+
+The address is typically an integer, but it can be represented as a string(AddressString) aswell
+
+
+<h2>Related</h2>
+<a href="readByte.htm">readByte</a>, <a href="readSmallInteger.htm">readSmallInteger</a>, <a href="readInteger.htm">readInteger</a>, <a href="readQword.htm">readQword</a>, <a href="readFloat.htm">readFloat</a>, <a href="readDouble.htm">readDouble</a>, <a href="readPointer.htm">readPointer</a>, <a href="readString.htm">readString</a>
+<a href="writeBytes.htm">writeBytes</a>, <a href="writeSmallInteger.htm">writeSmallInteger</a>, <a href="writeInteger.htm">writeInteger</a>, <a href="writeQword.htm">writeQword</a>, <a href="writeFloat.htm">writeFloat</a>, <a href="writeDouble.htm">writeDouble</a>, <a href="writePointer.htm">writePointer</a>, <a href="writeString.htm">writeString</a>
+</pre>
+
+
+
+
+<pre><h2>Example 1</h2>
+<div class="codeSnippet"><div class="codeSnippetToolbar"><a href="" onclick="navigator.clipboard.writeText(this.parentElement.parentElement.children[1].innerText);alert('Copied!')">Copy text</a></div><span class="codeText">
+<a href=../keywords/local.htm class=lua-keyword>local</a> <span class=lua-variable>a</span><span class=lua-operator>,</span> <span class=lua-variable>b</span><span class=lua-operator>,</span> <span class=lua-variable>c</span><span class=lua-operator>,</span> <span class=lua-variable>d</span><span class=lua-operator>,</span> <span class=lua-variable>e</span> <span class=lua-operator>=</span> <a href=readBytes.htm class=lua-builtinfunc>readBytes</a><span class=lua-operator>(</span><span class=lua-variable>process</span><span class=lua-operator>,</span><span class=lua-number>5</span><span class=lua-operator>)
+</span><a href=print.htm class=lua-builtinfunc>print</a><span class=lua-operator>(</span><span class=lua-string>"The first 5 bytes are:"</span><span class=lua-operator>,</span> <span class=lua-variable>a</span><span class=lua-operator>,</span> <span class=lua-variable>b</span><span class=lua-operator>,</span> <span class=lua-variable>c</span><span class=lua-operator>,</span> <span class=lua-variable>d</span><span class=lua-operator>,</span> <span class=lua-variable>e</span><span class=lua-operator>)</span>
+</span></div></pre>
+
+<pre><h2>Example 1</h2>
+Using <i>bReturnAsTable</i> to return a table:
+
+<div class="codeSnippet"><div class="codeSnippetToolbar"><a href="" onclick="navigator.clipboard.writeText(this.parentElement.parentElement.children[1].innerText);alert('Copied!')">Copy text</a></div><span class="codeText">
+<a href=print.htm class=lua-builtinfunc>print</a><span class=lua-operator>(</span><span class=lua-string>"The first 10 bytes of the process are:"</span><span class=lua-operator>)
+
+</span><a href=../keywords/local.htm class=lua-keyword>local</a> <span class=lua-variable>bytes</span> <span class=lua-operator>=</span> <a href=readBytes.htm class=lua-builtinfunc>readBytes</a><span class=lua-operator>(</span><span class=lua-variable>process</span><span class=lua-operator>,</span><span class=lua-number>10</span><span class=lua-operator>,</span><a href=../index.htm#2 class=lua-keyword>true</a><span class=lua-operator>)
+</span><a href=../keywords/numericfor.htm class=lua-keyword>for</a> <span class=lua-variable>i</span><span class=lua-operator>=</span><span class=lua-number>1</span><span class=lua-operator>,</span><span class=lua-number>10</span> <a href=../keywords/do.htm class=lua-keyword>do
+</a>    <a href=printf.htm class=lua-builtinfunc>printf</a><span class=lua-operator>(</span><span class=lua-string>"%02i: %02X"</span><span class=lua-operator>,</span><span class=lua-variable>i</span><span class=lua-operator>,</span> <span class=lua-variable>bytes[i]</span><span class=lua-operator>)
+</span><a href=../keywords/end.htm class=lua-keyword>end</span>
+</span></div></pre>
+
+</body></html>

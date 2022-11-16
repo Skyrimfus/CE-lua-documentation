@@ -1,0 +1,43 @@
+<html>
+<head><link href="../css/default.css" rel="stylesheet"></head>
+<body>
+<title>writeFloat</title>
+<a href="ceindex.htm" style="float:right">Index</a>
+<pre><h1>writeFloat</h1>
+Writes a 4-byte, single-precision, floating point value (inside Cheat Engine's memory)
+<div class="codeUsage"><strong>writeFloat</strong>( address, value )</div>
+<br><h2>Parameters</h2></pre>
+<table><tbody>
+<tr><td>address</td><td>The address where the value will be written</td></tr>
+<tr><td>value</td><td>The value to write</td></tr>
+</tbody></table>
+<pre>
+<h2>Return Value</h2>
+Returns <b>true</b> if the write was successful
+Returns <b>false</b> if the write fails
+
+
+<h2>Remarks</h2>
+Performs the write operation inside the Cheat Engine process itself, rather than the attached process
+
+The address is typically an integer, but it can be represented as a string(AddressString) aswell
+
+
+<h2>Related</h2>
+<a href="RELATED_FUNCTION1.htm">%RELATED_FUNCTION_1%</a>, <a href="RELATED.htm">%RELATED_FUNCTION_2%</a>
+</pre>
+
+
+
+
+<pre><h2>Example 1</h2>
+<div class="codeSnippet"><div class="codeSnippetToolbar"><a href="" onclick="navigator.clipboard.writeText(this.parentElement.parentElement.children[1].innerText);alert('Copied!')">Copy text</a></div><span class="codeText">
+script
+</span></div></pre>
+
+<pre><h2>Example 2</h2>
+<div class="codeSnippet"><div class="codeSnippetToolbar"><a href="" onclick="navigator.clipboard.writeText(this.parentElement.parentElement.children[1].innerText);alert('Copied!')">Copy text</a></div><span class="codeText">
+script
+</span></div></pre>
+
+</body></html>

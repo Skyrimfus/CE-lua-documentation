@@ -1,0 +1,37 @@
+<html>
+<head><link href="../css/default.css" rel="stylesheet"></head>
+<body>
+<title>readSmallInteger</title>
+<a href="ceindex.htm" style="float:right">Index</a>
+<pre><h1>readSmallInteger</h1>
+Read a 2-byte value
+<div class="codeUsage"><strong>readSmallInteger</strong>( address [, bSigned=false])</div>
+<h2>Parameters</h2></pre>
+<table><tbody>
+<tr><td>address</td><td>The address of the byte to be read</td></tr>
+<tr><td>bSigned</td><td><strong>[optional] </strong></strong>If true the value returned will be signed<br>default(false)</td></tr>
+</tbody></table>
+<pre>
+<h2>Return Value</h2>
+Returns the word(2 bytes) at the specified address
+
+
+<h2>Remarks</h2>
+If the memory can't be read, the return value is nil
+
+The address is typically an integer, but it can be represented as a string(AddressString) aswell
+
+
+<h2>Related</h2>
+<a href="readByte.htm">readByte</a>, <a href="readBytes.htm">readBytes</a>, <a href="readInteger.htm">readInteger</a>, <a href="readQword.htm">readQword</a>, <a href="readFloat.htm">readFloat</a>, <a href="readDouble.htm">readDouble</a>, <a href="readPointer.htm">readPointer</a>, <a href="readString.htm">readString</a>
+<a href="writeBytes.htm">writeBytes</a>, <a href="writeSmallInteger.htm">writeSmallInteger</a>, <a href="writeInteger.htm">writeInteger</a>, <a href="writeQword.htm">writeQword</a>, <a href="writeFloat.htm">writeFloat</a>, <a href="writeDouble.htm">writeDouble</a>, <a href="writePointer.htm">writePointer</a>, <a href="writeString.htm">writeString</a>
+</pre>
+
+
+<pre><h2>Example 1</h2>
+<div class="codeSnippet"><div class="codeSnippetToolbar"><a href="" onclick="navigator.clipboard.writeText(this.parentElement.parentElement.children[1].innerText);alert('Copied!')">Copy text</a></div><span class="codeText">
+<span class=lua-variable>value</span> <span class=lua-operator>=</span> <a href=readSmallInteger.htm class=lua-builtinfunc>readSmallInteger</a><span class=lua-operator>(</span><span class=lua-variable>process</span><span class=lua-operator>)
+</span><a href=print.htm class=lua-builtinfunc>print</a><span class=lua-operator>(</span><span class=lua-string>"First word(2bytes) of the process is"</span><span class=lua-operator>,</span><span class=lua-variable>value</span><span class=lua-operator>)</span>
+</span></div></pre>
+</body>
+</html>

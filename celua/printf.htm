@@ -1,0 +1,35 @@
+<html>
+<head><link href="../css/default.css" rel="stylesheet"></head>
+<body>
+<title>printf</title>
+<a href="ceindex.htm" style="float:right">Index</a>
+<pre><h1>printf</h1>
+Prints formated text to the output in Lua Engine window
+<div class="codeUsage"><strong>printf</strong>( formatedString [, variable1 [, variableN ,[ ... ]]] ] )</div>
+<br><h2>Parameters</h2></pre>
+<table><tbody>
+<tr><td>formatedString</td><td>A string to be formated</td></tr>
+<tr><td>variableN</td><td>Variable(s) that will be used in formatting</td></tr>
+</tbody></table>
+<pre>
+<h2>Return Value</h2>
+This function does not have a return value(<b>nil</b>)
+
+
+<h2>Remarks</h2>
+This function is the same as <a href="print.htm">print</a>(string.format(formatedString [, variable1 [, variableN ,[ ... ]]]))
+
+
+<h2>Related</h2>
+<a href="print.htm">print</a>
+</pre>
+
+
+
+
+<pre><h2>Example 1</h2>
+<div class="codeSnippet"><div class="codeSnippetToolbar"><a href="" onclick="navigator.clipboard.writeText(this.parentElement.parentElement.children[1].innerText);alert('Copied!')">Copy text</a></div><span class="codeText">
+<a href=printf.htm class=lua-builtinfunc>printf</a><span class=lua-operator>(</span><span class=lua-string>"0x%X"</span><span class=lua-operator>,</span><span class=lua-number>15</span><span class=lua-operator>)
+</span><span class=lua-comment>--outputs "0xF"</span>
+</span></div></pre>
+</body></html>

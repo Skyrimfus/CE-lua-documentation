@@ -1,0 +1,37 @@
+<html>
+<head><link href="../css/default.css" rel="stylesheet"></head>
+<body>
+<title>readBytesLocal</title>
+<a href="ceindex.htm" style="float:right">Index</a>
+<pre><h1>readBytesLocal</h1>
+Read a specific number of bytes (inside Cheat Engine's memory)
+<div class="codeUsage"><strong>readBytesLocal</strong>( address [, count = 1[, bReturnAsTable = false]])</div>
+<br><h2>Parameters</h2></pre>
+<table><tbody>
+<tr><td>address</td><td>The start address of the byte(s) to be read from</td></tr>
+<tr><td>count</td><td><strong>[optional] </strong></strong>Ammount of bytes to be read<br>default(1)</td></tr>
+<tr><td>bReturnAsTable</td><td><strong>[optional] </strong></strong>If true it will return a table instead of multiple values<br>default(false)</td></tr>
+</tbody></table>
+<pre>
+<h2>Return Value</h2>
+Returns multiple bytes or a table of bytes, depending on the <em>bReturnAsTable</em> argument
+
+
+<h2>Remarks</h2>
+Performs the read operation inside the Cheat Engine process itself, rather than the attached process
+If the memory can't be read, the return value is nil
+
+The address is typically an integer, but it can be represented as a string(AddressString) aswell
+
+
+<h2>Related</h2>
+<a href="readBytesLocal.htm">readBytesLocal</a>, <a href="readSmallIntegerLocal.htm">readSmallIntegerLocal</a>, <a href="readIntegerLocal.htm">readIntegerLocal</a>, <a href="readQwordLocal.htm">readQwordLocal</a>, <a href="readFloatLocal.htm">readFloatLocal</a>, <a href="readDoubleLocal.htm">readDoubleLocal</a>, <a href="readPointerLocal.htm">readPointerLocal</a>, <a href="readStringLocal.htm">readStringLocal</a>
+<a href="writeBytesLocal.htm">writeBytesLocal</a>, <a href="writeSmallIntegerLocal.htm">writeSmallIntegerLocal</a>, <a href="writeIntegerLocal.htm">writeIntegerLocal</a>, <a href="writeQwordLocal.htm">writeQwordLocal</a>, <a href="writeFloatLocal.htm">writeFloatLocal</a>, <a href="writeDoubleLocal.htm">writeDoubleLocal</a>, <a href="writePointerLocal.htm">writePointerLocal</a>, <a href="writeStringLocal.htm">writeStringLocal</a>
+</pre>
+
+
+
+
+
+
+</body></html>

@@ -1,5 +1,5 @@
 <html>
-<head>Made for Cheat Engine 7.4<link href="../css/default.css" rel="stylesheet"></head>
+<head>Made for Cheat Engine 7.4.2<link href="../css/default.css" rel="stylesheet"></head>
 <a href="../index.htm" style="float:right">Index</a>
 <pre>
 <title>Cheat engine specific</title>
@@ -20,7 +20,8 @@
 <tr><td>EAX, EBX, ECX, EDX, EDI, ESI, EBP, ESP, EIP</td><td>Available on 32 and 64-bit processes</td></tr>
 <tr><td>RAX, RBX, RCX, RDX, RDI, RSI, RBP, RSP, RIP, R8, R9, R10, R11, R12, R13, R14, R15</td><td>Available only on 64-bit processes</td></tr>
 </tbody></table>
- If you want to get the XMM registers use <a href="debug_getXMMPointer.htm">debug_getXMMPointer</a>
+ If you want to access the XMM registers use <a href="debug_getXMMPointer.htm">debug_getXMMPointer</a>
+ If you want to access the FPU registers use <a href="debug_getContext.htm">debug_getContext</a>( <b>true</b> ) - this also fills in the XMM variables
  
 <h2>Auto-assembler Variables</h2>
  These variables get assigned a value only when used in an auto-assembler script. The variables are local to the script:

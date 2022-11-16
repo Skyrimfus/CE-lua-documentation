@@ -1,1 +1,5 @@
 MAKE SURE THE OPTIONAL ARGUMENTS HAVE <strong>[optionl]</strong> IN THE TABLE DEFINITIONS
+
+find functions like: debug_onbreakpoint, onOpenProcess and document them
+
+missing lua keyword:goto(introduced in beta 5.2?)

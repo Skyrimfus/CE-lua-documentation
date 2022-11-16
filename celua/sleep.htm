@@ -1,0 +1,33 @@
+<html>
+<head><link href="../css/default.css" rel="stylesheet"></head>
+<body>
+<title>sleep</title>
+<a href="ceindex.htm" style="float:right">Index</a>
+<pre><h1>sleep</h1>
+Pauses the script execution
+<div class="codeUsage"><strong>sleep</strong>( delay )</div>
+<br><h2>Parameters</h2></pre>
+<table><tbody>
+<tr><td>delay</td><td>Amount of time to pause (in milliseconds)</td></tr>
+</tbody></table>
+<pre>
+<h2>Remarks</h2>
+Not precise under 10 ms
+
+It's not advised to use sleep inside the main thread. If you need to time something use timers(<a href="createTimer.htm">createTimer</a>)
+
+
+<h2>Related</h2>
+<a href="RELATED_FUNCTION1.htm">%RELATED_FUNCTION_1%</a>, <a href="RELATED.htm">%RELATED_FUNCTION_2%</a>
+</pre>
+
+
+
+
+<pre><h2>Example 1</h2>
+<div class="codeSnippet"><div class="codeSnippetToolbar"><a href="" onclick="navigator.clipboard.writeText(this.parentElement.parentElement.children[1].innerText);alert('Copied!')">Copy text</a></div><span class="codeText">
+<a href=print.htm class=lua-builtinfunc>print</a><span class=lua-operator>(</span><span class=lua-string>"Let's wait 1 second"</span><span class=lua-operator>)
+</span><a href=sleep.htm class=lua-builtinfunc>sleep</a><span class=lua-operator>(</span><span class=lua-number>1000</span><span class=lua-operator>)
+</span><a href=print.htm class=lua-builtinfunc>print</a><span class=lua-operator>(</span><span class=lua-string>"Done waiting!"</span><span class=lua-operator>)</span>
+</span></div></pre>
+</body></html>

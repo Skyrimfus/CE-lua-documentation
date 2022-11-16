@@ -1,0 +1,48 @@
+<html>
+<head><link href="../css/default.css" rel="stylesheet"></head>
+<body>
+<title>autoAssemble</title>
+<a href="ceindex.htm" style="float:right">Index</a>
+<pre><h1>autoAssemble</h1>
+Execute a Auto Assemble script
+<div class="codeUsage"><strong>autoAssemble</strong>( script [, tblDisableInfo = nil])</div>
+<div class="codeUsage"><strong>autoAssemble</strong>( script [, bTargetSelf = false [, tblDisableInfo = nil ]])</div>
+<br><h2>Parameters</h2></pre>
+<table><tbody>
+<tr><td>script</td><td>Auto Assemble script that will execute</td></tr>
+<tr><td>tblDisableInfo</td><td><strong>[optional] </strong>The table that <i>autoAssemble</i> returns. If this parameter is passed then the <b>[DISABLE]</b> section of the script will be executed<br>default(nil)</td></tr>
+<tr><td>bTargetSelf</td><td><strong>[optional] </strong>If true, then the script will be assembled in Cheat Engine's memory, rather than the attached process'<br>default(false)</td></tr>
+</tbody></table>
+<pre>
+<h2>Return Value</h2>
+<b>2 return values:</b>
+If the script executes sucessfully then:
+  The first return value is <b>true</b>
+  The second return value is a <b>table</b> that you can use in the <i>tblDisableInfo</i> parameter
+
+If the script fails to execute then:
+  The first return value is <b>false</b>
+  The second return value is a <b>string</b> that tells you why the script failed
+  
+<h2>Remarks</h2>
+remarks todo
+
+
+<h2>Related</h2>
+<a href="RELATED_FUNCTION1.htm">%RELATED_FUNCTION_1%</a>, <a href="RELATED.htm">%RELATED_FUNCTION_2%</a>
+</pre>
+
+
+
+
+<pre><h2>Example 1</h2>
+<div class="codeSnippet"><div class="codeSnippetToolbar"><a href="" onclick="navigator.clipboard.writeText(this.parentElement.parentElement.children[1].innerText);alert('Copied!')">Copy text</a></div><span class="codeText">
+script
+</span></div></pre>
+
+<pre><h2>Example 2</h2>
+<div class="codeSnippet"><div class="codeSnippetToolbar"><a href="" onclick="navigator.clipboard.writeText(this.parentElement.parentElement.children[1].innerText);alert('Copied!')">Copy text</a></div><span class="codeText">
+script
+</span></div></pre>
+
+</body></html>

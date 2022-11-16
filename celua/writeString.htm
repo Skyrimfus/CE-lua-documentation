@@ -1,0 +1,44 @@
+<html>
+<head><link href="../css/default.css" rel="stylesheet"></head>
+<body>
+<title>writeString</title>
+<a href="ceindex.htm" style="float:right">Index</a>
+<pre><h1>writeString</h1>
+Writes a string
+<div class="codeUsage"><strong>writeString</strong>( address, string [, bWideChar=false] )</div>
+<br><h2>Parameters</h2></pre>
+<table><tbody>
+<tr><td>address</td><td>The start address where the string will be written</td></tr>
+<tr><td>string</td><td>The string to write</td></tr>
+<tr><td>bWideChar</td><td><strong>[optional] </strong></strong>Set this to true if you want to write a wide-string<br>default(false)</td></tr>
+</tbody></table>
+<pre>
+<h2>Return Value</h2>
+Returns <b>true</b> if the write was successful
+Returns <b>false</b> if the write fails
+
+
+<h2>Remarks</h2>
+The address is typically an integer, but it can be represented as a string(AddressString) aswell
+
+This function does <b>not</b> append a 0-terminator at the end of the string
+
+
+<h2>Related</h2>
+<a href="RELATED_FUNCTION1.htm">%RELATED_FUNCTION_1%</a>, <a href="RELATED.htm">%RELATED_FUNCTION_2%</a>
+</pre>
+
+
+
+
+<pre><h2>Example 1</h2>
+<div class="codeSnippet"><div class="codeSnippetToolbar"><a href="" onclick="navigator.clipboard.writeText(this.parentElement.parentElement.children[1].innerText);alert('Copied!')">Copy text</a></div><span class="codeText">
+script
+</span></div></pre>
+
+<pre><h2>Example 2</h2>
+<div class="codeSnippet"><div class="codeSnippetToolbar"><a href="" onclick="navigator.clipboard.writeText(this.parentElement.parentElement.children[1].innerText);alert('Copied!')">Copy text</a></div><span class="codeText">
+script
+</span></div></pre>
+
+</body></html>

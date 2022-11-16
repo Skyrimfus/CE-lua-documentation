@@ -1,0 +1,42 @@
+<html>
+<head><link href="../css/default.css" rel="stylesheet"></head>
+<body>
+<title>readIntegerLocal</title>
+<a href="ceindex.htm" style="float:right">Index</a>
+<pre><h1>readIntegerLocal</h1>
+Read a dword(4-byte) value (inside Cheat Engine's memory)
+<div class="codeUsage"><strong>readIntegerLocal</strong>( address [, bSigned = false] )</div>
+<br><h2>Parameters</h2></pre>
+<table><tbody>
+<tr><td>address</td><td>The address of the value to be read</td></tr>
+<tr><td>bSigned</td><td><strong>[optional]</strong>If true the value returned will be signed</td></tr>
+</tbody></table>
+<pre>
+<h2>Return Value</h2>
+Returns the dword(4 bytes) at the specified address inside Cheat Engine
+
+
+<h2>Remarks</h2>
+Performs the read operation inside the Cheat Engine process itself, rather than the attached process
+If the memory can't be read, the return value is nil
+
+The address is typically an integer, but it can be represented as a string(AddressString) aswell
+
+
+<h2>Related</h2>
+<a href="readByte.htm">readByte</a>, <a href="readBytes.htm">readBytes</a>, <a href="readSmallInteger.htm">readSmallInteger</a>, <a href="readQword.htm">readQword</a>, <a href="readFloat.htm">readFloat</a>, <a href="readDouble.htm">readDouble</a>, <a href="readPointer.htm">readPointer</a>, <a href="readString.htm">readString</a>
+<a href="writeBytes.htm">writeBytes</a>, <a href="writeSmallInteger.htm">writeSmallInteger</a>, <a href="writeInteger.htm">writeInteger</a>, <a href="writeQword.htm">writeQword</a>, <a href="writeFloat.htm">writeFloat</a>, <a href="writeDouble.htm">writeDouble</a>, <a href="writePointer.htm">writePointer</a>, <a href="writeString.htm">writeString</a>
+</pre>
+
+
+<pre><h2>Example 1</h2>
+Make sure that Cheat Engine Tutorial(64-bit) is running and on step 2:
+
+<div class="codeSnippet"><div class="codeSnippetToolbar"><a href="" onclick="navigator.clipboard.writeText(this.parentElement.parentElement.children[1].innerText);alert('Copied!')">Copy text</a></div><span class="codeText">
+<a href=../keywords/ifthen.htm class=lua-keyword>if</a> <a href=../index.htm#1 class=lua-keyword>not</a> <a href=OpenProcess.htm class=lua-builtinfunc>OpenProcess</a><span class=lua-operator>(</span><span class=lua-string>"Tutorial-x86_64.exe"</span><span class=lua-operator>)</span> <a href=../keywords/ifthen.htm class=lua-keyword>then</a> <a href=print.htm class=lua-builtinfunc>print</a><span class=lua-operator>(</span><span class=lua-string>"Can't start :("</span><span class=lua-operator>)</span><span class=lua-operator>;</span><a href=../keywords/function.htm class=lua-keyword>return</a> <a href=../keywords/end.htm class=lua-keyword>end
+</a><a href=../keywords/local.htm class=lua-keyword>local</a> <span class=lua-variable>HPaddress</span> <span class=lua-operator>=</span> <a href=getAddressSafe.htm class=lua-builtinfunc>getAddressSafe</a><span class=lua-operator>(</span><span class=lua-string>"[Tutorial-x86_64.exe+325A70]+7F8"</span><span class=lua-operator>)
+</span><a href=../keywords/local.htm class=lua-keyword>local</a> <span class=lua-variable>hp</span> <span class=lua-operator>=</span> <a href=readInteger.htm class=lua-builtinfunc>readInteger</a><span class=lua-operator>(</span><span class=lua-variable>HPaddress</span><span class=lua-operator>)
+</span><a href=print.htm class=lua-builtinfunc>print</a><span class=lua-operator>(</span><span class=lua-string>"Your HP is:"</span><span class=lua-operator>,</span><span class=lua-variable>hp</span><span class=lua-operator>)</span>
+</span></div></pre>
+
+</body></html>

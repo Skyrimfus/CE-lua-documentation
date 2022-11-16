@@ -1,0 +1,34 @@
+<html>
+<head><link href="../css/default.css" rel="stylesheet"></head>
+<body>
+<title>print</title>
+<a href="ceindex.htm" style="float:right">Index</a>
+<pre><h1>print</h1>
+Prints text to the output in Lua Engine window
+<div class="codeUsage"><strong>print</strong>( text [, text2 [, ... ]] )</div>
+<br><h2>Parameters</h2></pre>
+<table><tbody>
+<tr><td>text</td><td>Text to be printed</td></tr>
+</tbody></table>
+<pre>
+<h2>Return Value</h2>
+This function returns the outputted string
+
+
+<h2>Remarks</h2>
+Print can only output numbers and strings. If you want to output booleans, nil values or other types use <a href="printf.htm">printf</a> or manually convert them to a string using <i>tostring()</i>
+
+
+<h2>Related</h2>
+<a href="printf.htm">printf</a>
+</pre>
+
+
+
+
+<pre><h2>Example 1</h2>
+<div class="codeSnippet"><div class="codeSnippetToolbar"><a href="" onclick="navigator.clipboard.writeText(this.parentElement.parentElement.children[1].innerText);alert('Copied!')">Copy text</a></div><span class="codeText">
+<a href=print.htm class=lua-builtinfunc>print</a><span class=lua-operator>(</span><span class=lua-string>"Hello World!"</span><span class=lua-operator>)</span>
+</span></div></pre>
+
+</body></html>
