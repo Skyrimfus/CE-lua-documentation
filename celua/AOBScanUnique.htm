@@ -1,22 +1,21 @@
 <html>
 <head><link href="../css/default.css" rel="stylesheet"></head>
 <body>
-<title>autoAssembleCheck</title>
+<title>AOBScanUnique</title>
 <a href="ceindex.htm" style="float:right">Index</a>
-<pre><h1>autoAssembleCheck</h1>
-Check the script for errors
-<div class="codeUsage"><strong>autoAssembleCheck</strong>( script [, bEnable = true [, bTargetself = false ]] )</div>
+<pre><h1>AOBScanUnique</h1>
+Search for the first occurente of array of bytes
+<div class="codeUsage"><strong>AOBScanUnique</strong>( stringAOB [, protectionflags = "" [, alignmenttype = 0 [, alignmentparam = 0 ]]])</div>
 <br><h2>Parameters</h2></pre>
 <table><tbody>
-<tr><td>script</td><td>Auto Assemble script that will be checked for errors</td></tr>
-<tr><td>bEnable</td><td><strong>[optional] </strong></strong>Set this to <i>true</i> if you want to check the [ENABLE] section<br>Set this to <i>false</i> if you want to check the [DISABLE] section<br>default(5)</td></tr>
-<tr><td>bTargetself</td><td><strong>[optional] </strong></strong>If true, then the script will be checked as if it were assembled in Cheat Engine's memory, rather than the attached process'<br>default(false)</td></tr>
+<tr><td>PARAMETER</td><td>The name of the variable(s) to be declared</td></tr>
+<tr><td>OPTIONAL_PARAMETER</td><td><strong>[optional] </strong></strong>thingy to do <br>default(5)</td></tr>
+<tr><td>OPTIONAL_PARAMETER</td><td><strong>[optional] </strong></strong>thingy to do <br>default(5)</td></tr>
+<tr><td>OPTIONAL_PARAMETER</td><td><strong>[optional] </strong></strong>thingy to do <br>default(5)</td></tr>
 </tbody></table>
 <pre>
 <h2>Return Value</h2>
-If the script has no errors it returns <b>true</b>, otherwise it returns 2 values:
-  1.<b>false</b> 
-  2.Error message as a <b>string</b>
+This function returns ...
 
 
 <h2>Remarks</h2>
