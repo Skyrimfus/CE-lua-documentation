@@ -1,0 +1,74 @@
+<html>
+<head><link href="../css/default.css" rel="stylesheet"></head>
+<a href="ceindex.htm" style="float:right">Index</a>
+<pre>
+<h1>mouse_event</h1>
+Check out the <a href="https://docs.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-mouse_event">MSDN</a> definition for this API. This page is a copy<br>
+
+Synthesize mouse motion and button clicks
+<div class="codeUsage"><strong>mouse_event</strong>( dwFlags [, dx [, dy [, dwData [, dwExtraInfo ]]]] )</div>
+<h2>Parameters</h2>
+<table><tbody>
+<tr><td>dwFlags</td><td>Controls various aspects of mouse motion and button clicking. This parameter can be certain combinations of the following values:
+<table>
+<tr><td>
+MOUSEEVENTF_ABSOLUTE<br>
+0x8000</td><td>The dx and dy parameters contain normalized absolute coordinates. If not set, those parameters contain relative data: the change in position since the last reported position. This flag can be set, or not set, regardless of what kind of mouse or mouse-like device, if any, is connected to the system. For further information about relative mouse motion, see the following Remarks section.
+</td></tr>
+<tr><td>MOUSEEVENTF_LEFTDOWN<br>0x0002</td><td>The left button is down.</td></tr>
+<tr><td>MOUSEEVENTF_LEFTUP<br>0x0004</td><td>The left button is up. </td></tr>
+<tr><td>MOUSEEVENTF_MIDDLEDOWN<br>0x0020</td><td>The middle button is down. </td></tr>
+<tr><td>MOUSEEVENTF_MIDDLEUP<br>0x0040</td><td>The middle button is up. </td></tr>
+<tr><td>MOUSEEVENTF_MOVE<br>0x0001</td><td>Movement occurred. </td></tr>
+<tr><td>MOUSEEVENTF_RIGHTDOWN<br>0x0008</td><td>The right button is down. </td></tr>
+<tr><td>MOUSEEVENTF_RIGHTUP<br>0x0010</td><td>The right button is up. </td></tr>
+<tr><td>MOUSEEVENTF_WHEEL<br>0x0800</td><td>The wheel has been moved, if the mouse has a wheel. The amount of movement is specified in dwData </td></tr>
+<tr><td>MOUSEEVENTF_XDOWN<br>0x0080</td><td>An X button was pressed. </td></tr>
+<tr><td>MOUSEEVENTF_XUP<br>0x0100</td><td>An X button was released. </td></tr>
+<tr><td>MOUSEEVENTF_WHEEL<br>0x0800</td><td>The wheel button is rotated. </td></tr>
+<tr><td>MOUSEEVENTF_HWHEEL<br>0x01000</td><td>The wheel button is tilted. </td></tr>
+</table></td></tr>
+<tr><td>dx</td><td>The mouse's absolute position along the x-axis or its amount of motion since the last mouse event was generated, depending on the setting of MOUSEEVENTF_ABSOLUTE. Absolute data is specified as the mouse's actual x-coordinate; relative data is specified as the number of mickeys moved. A mickey is the amount that a mouse has to move for it to report that it has moved.</td></tr>
+<tr><td>dy</td><td>The mouse's absolute position along the y-axis or its amount of motion since the last mouse event was generated, depending on the setting of MOUSEEVENTF_ABSOLUTE. Absolute data is specified as the mouse's actual y-coordinate; relative data is specified as the number of mickeys moved.</td></tr>
+<tr><td>dwData</td><td>If dwFlags contains MOUSEEVENTF_WHEEL, then dwData specifies the amount of wheel movement. A positive value indicates that the wheel was rotated forward, away from the user; a negative value indicates that the wheel was rotated backward, toward the user. One wheel click is defined as WHEEL_DELTA, which is 120.
+
+If dwFlags contains MOUSEEVENTF_HWHEEL, then dwData specifies the amount of wheel movement. A positive value indicates that the wheel was tilted to the right; a negative value indicates that the wheel was tilted to the left.
+
+If dwFlags contains MOUSEEVENTF_XDOWN or MOUSEEVENTF_XUP, then dwData specifies which X buttons were pressed or released. This value may be any combination of the following flags.
+
+If dwFlags is not MOUSEEVENTF_WHEEL, MOUSEEVENTF_XDOWN, or MOUSEEVENTF_XUP, then dwData should be zero.</td></tr>
+<tr><td>dwExtraInfo</td><td>An additional value associated with the mouse event. An application calls <a href="https://docs.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-getmessageextrainfo">GetMessageExtraInfo</a> to obtain this extra information.</td></tr>
+</tbody></table>
+<h2>Remarks</h2>
+</pre>
+
+If the mouse has moved, indicated by MOUSEEVENTF_MOVE being set, dx and dy hold information about that motion. The information is specified as absolute or relative integer values.
+<br><br>
+If MOUSEEVENTF_ABSOLUTE value is specified, dx and dy contain normalized absolute coordinates between 0 and 65,535. The event procedure maps these coordinates onto the display surface. Coordinate (0,0) maps onto the upper-left corner of the display surface, (65535,65535) maps onto the lower-right corner.
+<br><br>
+If the MOUSEEVENTF_ABSOLUTE value is not specified, dx and dy specify relative motions from when the last mouse event was generated (the last reported position). Positive values mean the mouse moved right (or down); negative values mean the mouse moved left (or up).
+<br><br>
+Relative mouse motion is subject to the settings for mouse speed and acceleration level. An end user sets these values using the Mouse application in Control Panel. An application obtains and sets these values with the <a href "https://docs.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-systemparametersinfoa">SystemParametersInfo</a> function.
+<br><br>
+The system applies two tests to the specified relative mouse motion when applying acceleration. If the specified distance along either the x or y axis is greater than the first mouse threshold value, and the mouse acceleration level is not zero, the operating system doubles the distance. If the specified distance along either the x- or y-axis is greater than the second mouse threshold value, and the mouse acceleration level is equal to two, the operating system doubles the distance that resulted from applying the first threshold test. It is thus possible for the operating system to multiply relatively-specified mouse motion along the x- or y-axis by up to four times.
+<br><br>
+Once acceleration has been applied, the system scales the resultant value by the desired mouse speed. Mouse speed can range from 1 (slowest) to 20 (fastest) and represents how much the pointer moves based on the distance the mouse moves. The default value is 10, which results in no additional modification to the mouse motion.
+<br><br>
+The mouse_event function is used to synthesize mouse events by applications that need to do so. It is also used by applications that need to obtain more information from the mouse than its position and button state. For example, if a tablet manufacturer wants to pass pen-based information to its own applications, it can write a DLL that communicates directly to the tablet hardware, obtains the extra information, and saves it in a queue. The DLL then calls mouse_event with the standard button and x/y position data, along with, in the dwExtraInfo parameter, some pointer or index to the queued extra information. When the application needs the extra information, it calls the DLL with the pointer or index stored in dwExtraInfo, and the DLL returns the extra information.
+
+<pre>
+<h2>Related</h2>
+<a href="setMousePos.htm">setMousePos</a>, <a href="getMousePos.htm">getMousePos</a>
+
+
+<h2>Example</h2>
+<div class="codeSnippet">
+<div class="codeSnippetToolbar"><a href="" onclick="navigator.clipboard.writeText(this.parentElement.parentElement.children[1].innerText);alert('Copied!')">Copy text</a></div><span class="codeText">
+<span class=lua-comment>--move the mouse diagonally to 20 pixels down, 20 pixels to the right
+</span><a href=../keywords/numericfor.htm class=lua-keyword>for</a> <span class=lua-variable>i</span><span class=lua-operator>=</span><span class=lua-number>1</span><span class=lua-operator>,</span><span class=lua-number>20</span> <a href=../keywords/do.htm class=lua-keyword>do
+</a>  <a href=mouse_event.htm class=lua-builtinfunc>mouse_event</a><span class=lua-operator>(</span><span class=lua-variable>MOUSEEVENTF_MOVE</span> <span class=lua-operator>,</span><span class=lua-number>1</span><span class=lua-operator>,</span> <span class=lua-number>1</span><span class=lua-operator>)
+</span>  <a href=sleep.htm class=lua-builtinfunc>sleep</a><span class=lua-operator>(</span><span class=lua-number>1</span><span class=lua-operator>)
+</span><a href=../keywords/end.htm class=lua-keyword>end</span>
+</span></div>
+</pre>
+</html>
