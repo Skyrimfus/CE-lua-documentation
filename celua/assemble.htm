@@ -1,0 +1,46 @@
+<html>
+<head><link href="../css/default.css" rel="stylesheet"></head>
+<body>
+<title>assemble</title>
+<a href="ceindex.htm" style="float:right">Index</a>
+<pre><h1>assemble</h1>
+assembles a single line of code and returns a byte array of the generated code.
+<div class="codeUsage"><strong>assemble</strong>( line [, address = 0 [, assemblePreference = 0 [, bSkipRangeCheck = false]]] )</div>
+<br><h2>Parameters</h2></pre>
+<table><tbody>
+<tr><td>line</td><td>assembly line</td></tr>
+<tr><td>address</td><td><strong>[optional] </strong></strong>target address where the line is supposed to be assembled<br>default(0)</td></tr>
+<tr><td>assemblePreference</td><td><strong>[optional] </strong></strong>apNone=0, apShort=1, apLong=2, apFar=3 <br>default(0)</td></tr>
+<tr><td>bSkipRangeCheck</td><td><strong>[optional] </strong></strong>boolean.  Which will skip range checks if true and just assembles it, no matter of how wrong the result will be <br>default(false)</td></tr>
+</tbody></table>
+<pre>
+<h2>Return Value</h2>
+On success:
+Byte table representation of the given line
+
+On Fail:
+nil, or error message
+
+
+<h2>Remarks</h2>
+Very nice remarks
+
+
+<h2>Related</h2>
+<a href="RELATED_FUNCTION1.htm">%RELATED_FUNCTION_1%</a>, <a href="RELATED.htm">%RELATED_FUNCTION_2%</a>
+</pre>
+
+
+
+
+<pre><h2>Example 1</h2>
+<div class="codeSnippet"><div class="codeSnippetToolbar"><a href="" onclick="navigator.clipboard.writeText(this.parentElement.parentElement.children[1].innerText);alert('Copied!')">Copy text</a></div><span class="codeText">
+script
+</span></div></pre>
+
+<pre><h2>Example 2</h2>
+<div class="codeSnippet"><div class="codeSnippetToolbar"><a href="" onclick="navigator.clipboard.writeText(this.parentElement.parentElement.children[1].innerText);alert('Copied!')">Copy text</a></div><span class="codeText">
+script
+</span></div></pre>
+
+</body></html>

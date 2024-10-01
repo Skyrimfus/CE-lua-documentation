@@ -29,6 +29,7 @@ If the <em>function</em> parameter is defined:
  -When the breakpoint gets hit, it will execute that function and continue the program. 
  -If you want to halt the execution return 1 in the function(must return 1, returning true or some other expression results in the program running)
  -The instruction at the <em>address</em> will get executed after the function finishes
+    Note: If you change the xIP register, it will NOT execute the instruction where the breakpoint is placed, rather it will jump to the new xIP address and execute the instruction that's there. 
  -You can access read and write <a href="ceindex.htm#debugvars">DEBUG</a> variables inside the function
     Note: When writing registers make sure to use appropriate ones depending on the process bitness!
 
